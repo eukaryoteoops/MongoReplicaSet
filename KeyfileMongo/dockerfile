@@ -1,0 +1,5 @@
+FROM mongo:latest
+COPY key_file /data/key_file
+RUN [ "chown","mongodb", "/data/key_file" ]
+RUN [ "chmod", "400", "/data/key_file" ]
+ENTRYPOINT /usr/bin/mongod --bind_ip_all --replSet rs0 --auth --keyFile=/data/key_file

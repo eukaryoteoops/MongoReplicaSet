@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mongo0:
+    hostname: mongo0
+    container_name: mongo0
+    build: KeyfileMongo
+    ports:
+      - 27017:27017
+    restart: always
+  mongo1:
+    hostname: mongo1
+    container_name: mongo1
+    build: KeyfileMongo
+    ports:
+      - 27018:27017
+    restart: always
+  mongo2:
+    hostname: mongo2
+    container_name: mongo2
+    build: KeyfileMongo
+    ports:
+      - 27019:27017
+    restart: always
